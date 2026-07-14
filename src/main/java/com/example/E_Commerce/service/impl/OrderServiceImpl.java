@@ -85,11 +85,15 @@ public class OrderServiceImpl implements OrderService {
         // Save Order
         Orders savedOrder = orderRepository.save(order);
 
-        // Send Email
-        emailService.sendOrderConfirmation(
-                user.getEmail(),
-                String.valueOf(savedOrder.getId())
-        );
+         // Send Email
+        try {
+            emailService.sendOrderConfirmation(
+                    user.getEmail(),
+                    String.valueOf(savedOrder.getId())
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // Clear Cart
         cartService.clearCart();

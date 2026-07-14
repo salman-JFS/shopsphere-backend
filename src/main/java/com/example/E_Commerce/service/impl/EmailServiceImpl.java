@@ -81,7 +81,7 @@ public class EmailServiceImpl implements EmailService {
 
                                 <br>
 
-                                <a href="http://localhost:5173/orders"
+                                <a href="https://shopsphere-frontend.onrender.com/orders">
                                    style="background:#06b6d4;color:white;padding:12px 24px;text-decoration:none;border-radius:6px;">
                                     View My Orders
                                 </a>
@@ -111,6 +111,8 @@ public class EmailServiceImpl implements EmailService {
             mailSender.send(message);
 
         } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
             throw new RuntimeException("Failed to send order confirmation email.", e);
         }
     }
