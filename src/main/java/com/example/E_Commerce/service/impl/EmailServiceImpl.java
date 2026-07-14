@@ -24,7 +24,7 @@ public class EmailServiceImpl implements EmailService {
                     new MimeMessageHelper(message, true, "UTF-8");
 
             helper.setTo(to);
-
+            helper.setFrom("salmankhanbad690@gmail.com");
             helper.setSubject("Order Placed Successfully | ShopSphere");
 
             String html = """
@@ -111,9 +111,10 @@ public class EmailServiceImpl implements EmailService {
             mailSender.send(message);
 
         } catch (Exception e) {
+            System.out.println("========== EMAIL ERROR ==========");
             e.printStackTrace();
-            System.out.println(e.getMessage());
-            throw new RuntimeException("Failed to send order confirmation email.", e);
+            System.out.println("Exception Type: " + e.getClass().getName());
+            System.out.println("Exception Message: " + e.getMessage());
         }
     }
 }
