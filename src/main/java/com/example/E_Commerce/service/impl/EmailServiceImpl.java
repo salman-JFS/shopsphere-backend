@@ -24,7 +24,6 @@ public class EmailServiceImpl implements EmailService {
                     new MimeMessageHelper(message, true, "UTF-8");
 
             helper.setTo(to);
-            helper.setFrom("YOUR_VERIFIED_EMAIL");
             helper.setFrom("salmankhanbad690@gmail.com");
             helper.setSubject("Order Placed Successfully | ShopSphere");
 
@@ -82,10 +81,10 @@ public class EmailServiceImpl implements EmailService {
 
                                 <br>
 
-                                <a href="https://shopsphere-frontend.onrender.com/orders">
-                                   style="background:#06b6d4;color:white;padding:12px 24px;text-decoration:none;border-radius:6px;">
-                                    View My Orders
-                                </a>
+                                <a href="https://shopsphere-frontend.onrender.com/orders"
+                                       style="background:#06b6d4;color:white;padding:12px 24px;text-decoration:none;border-radius:6px;">
+                                        View My Orders
+                                    </a>
 
                                 <br><br>
 
