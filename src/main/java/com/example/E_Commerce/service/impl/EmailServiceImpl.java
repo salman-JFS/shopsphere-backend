@@ -24,6 +24,7 @@ public class EmailServiceImpl implements EmailService {
                     new MimeMessageHelper(message, true, "UTF-8");
 
             helper.setTo(to);
+            helper.setFrom("YOUR_VERIFIED_EMAIL");
             helper.setFrom("salmankhanbad690@gmail.com");
             helper.setSubject("Order Placed Successfully | ShopSphere");
 
